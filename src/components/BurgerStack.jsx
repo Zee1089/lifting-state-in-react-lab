@@ -4,8 +4,10 @@ import Ingredient from './Ingredient.jsx';
 export default function BurgerStack({ stack, removeFromBurger }) {
   if (stack.length === 0) {
     console.log('No Ingredient');
-  }
+  } else {
 
+
+  
   return (
     <div>
       <h2>Burger Stack</h2>
@@ -21,4 +23,5 @@ export default function BurgerStack({ stack, removeFromBurger }) {
       </ul>
     </div>
   );
+}
 }
