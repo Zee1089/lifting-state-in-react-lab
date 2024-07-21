@@ -1,23 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function Ingredient({ingredient, addtoBurger, removeFromBurger, isInStack}) {
+export default function Ingredient({ ingredient, addToBurger, removeFromBurger, isInList }) {
   return (
-   
-    <li 
-    style={{color: ingredient.color}}>
-    
-    {ingredient.name}
-
-    
-    <button onClick={(onButtonClick) =>addtoBurger(ingredient)}  type='submit'> + </button>
-
-    
-    {!isInStack && (
-        <button onClick={() => removeFromBurger(ingredient)} type='submit'> x </button>
+    <li style={{ color: ingredient.color }}>
+      {ingredient.name}
+      {isInList ? (
+        <button onClick={() => addToBurger(ingredient)} type="button"> + </button>
+      ) : (
+        <button onClick={() => removeFromBurger(ingredient)} type="button"> x </button>
       )}
-    
     </li>
-     
-  )
+  );
 }
- 

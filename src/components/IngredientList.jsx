@@ -1,19 +1,20 @@
-import React from 'react'
-import Ingredient from './Ingredient.jsx'
+import React from 'react';
+import Ingredient from './Ingredient.jsx';
 
-export default function IngredientList({banana, onButtonClick, addtoBurger}) {
+export default function IngredientList({ availableIngredients, addToBurger }) {
   return (
     <div>
-        {banana.map((ingredient) => (
-        <Ingredient 
-        key={ingredient.id} 
-        ingredient={ingredient}
-        addtoBurger = {addtoBurger}
-
-        // onButtonClick={() => addtoBurger(ingredient)}
-        />
+      <h2>Available Ingredients</h2>
+      <ul>
+        {availableIngredients.map((ingredient) => (
+          <Ingredient 
+            key={ingredient.name} 
+            ingredient={ingredient}
+            addToBurger={addToBurger}
+            isInList={true}
+          />
         ))}
+      </ul>
     </div>
   );
 }
-

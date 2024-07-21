@@ -1,25 +1,24 @@
-import React from 'react'
-import Ingredient from './Ingredient.jsx'
+import React from 'react';
+import Ingredient from './Ingredient.jsx';
 
-export default function BurgerStack({banana, onButtonClick, removeFromBurger}) {
-    if (banana.length === 0)
-        console.log('No Ingredient');
-    
+export default function BurgerStack({ stack, removeFromBurger }) {
+  if (stack.length === 0) {
+    console.log('No Ingredient');
+  }
+
   return (
     <div>
-    {banana.map((ingredient) => (
-    <Ingredient
-     key={ingredient.id}  
-     ingredient={ingredient}
-
-     onButtonClick={() => removeFromBurger(Ingredient)}
-     />
-
-    )
-    )}
-</div>
-  )
+      <h2>Burger Stack</h2>
+      <ul>
+        {stack.map((ingredient) => (
+          <Ingredient
+            key={ingredient.name}  
+            ingredient={ingredient}
+            removeFromBurger={removeFromBurger}
+            isInList={false}
+          />
+        ))}
+      </ul>
+    </div>
+  );
 }
-
-
-
